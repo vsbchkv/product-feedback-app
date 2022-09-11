@@ -1,0 +1,47 @@
+{
+  "name": "product-feedback-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "stylelint": "stylelint --ignore-path .gitignore 'src/**/*.{css,scss,postcss}'",
+    "stylelint:fix": "stylelint --fix --ignore-path .gitignore 'src/**/*.{css,scss,postcss}'"
+  },
+  "dependencies": {
+    "postcss-advanced-variables": "^3.0.1",
+    "postcss-custom-media": "^8.0.2",
+    "postcss-extend": "^1.0.5",
+    "postcss-functions": "^4.0.2",
+    "postcss-nesting": "^10.1.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "@vitejs/plugin-react": "^2.1.0",
+    "autoprefixer": "^10.4.8",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^22.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.31.7",
+    "jsdoc": "^3.6.11",
+    "postcss-define-function": "^0.1.2",
+    "prettier": "^2.7.1",
+    "sass": "^1.54.9",
+    "stylelint": "^14.11.0",
+    "stylelint-config-standard": "^28.0.0",
+    "stylelint-order": "^5.0.0",
+    "typescript": "*",
+    "vite": "^3.1.0"
+  }
+}
