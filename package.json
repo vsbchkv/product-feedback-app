@@ -4,15 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "tsc && vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --host 0.0.0.0",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
     "stylelint": "stylelint --ignore-path .gitignore 'src/**/*.{css,scss,postcss}'",
     "stylelint:fix": "stylelint --fix --ignore-path .gitignore 'src/**/*.{css,scss,postcss}'"
   },
   "dependencies": {
+    "classnames": "^2.3.1",
     "postcss-advanced-variables": "^3.0.1",
     "postcss-custom-media": "^8.0.2",
     "postcss-extend": "^1.0.5",
