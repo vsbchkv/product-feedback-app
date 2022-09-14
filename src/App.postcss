@@ -1,3 +1,16 @@
-.App {
-  --app: 1000000px;
+@layer reset, base, theme, components, variations;
+
+@layer components {
+  .app {
+    display: grid;
+    grid: 'header' minmax(rem(72), min-content) 'content' 1fr / 1fr;
+    min-height: 100vh;
+    font-weight: 555;
+    color: var(--text-color);
+    background-color: var(--background-primary);
+
+    @media (min-width: 640px) {
+      --tablet: none;
+    }
+  }
 }

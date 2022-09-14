@@ -1,0 +1,28 @@
+@layer theme {
+
+  @layer light, dark, user;
+
+  @layer light {
+    :root {
+      --accent-color: #4661e6;
+      --background-primary: #f2f2f2;
+      --text-color: #3a4374;
+      --text-color-light: #647196;
+      --text-color-2: #fff;
+      --details-color: #ad1fea;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @layer theme.dark {
+      :root {
+        --accent-color: #4661e6;
+        --background-primary: #232323;
+        --text-color: #c8d6ff;
+        --text-color-light: #7c849c;
+        --text-color-2: #fff;
+        --details-color: #ad1fea;
+      }
+    }
+  }
+}
