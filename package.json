@@ -13,6 +13,7 @@
     "stylelint:fix": "stylelint --fix --ignore-path .gitignore 'src/**/*.{css,scss,postcss}'"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
     "classnames": "^2.3.1",
     "postcss-advanced-variables": "^3.0.1",
     "postcss-custom-media": "^8.0.2",
@@ -20,7 +21,8 @@
     "postcss-functions": "^4.0.2",
     "postcss-nesting": "^10.1.10",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

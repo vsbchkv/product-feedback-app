@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { toggleSidebar } from '../../features/sidebar-slice';
+
+
 import classNames from 'classnames';
 import './Header.postcss';
-import Button from './common/Button/Button';
+import Button from '../common/Button/Button';
 
-// export interface IHeaderProps {
-// }
+const Header = () => {
 
-const Header = ()=> {
-
-  const [menuOpened, setMenuOpened] = useState(false);
+  const menuOpened = useAppSelector((state) => state.sidebar.opened);
+  const dispatch = useAppDispatch();
   const toggleMenu = () => {
-    setMenuOpened(!menuOpened);
+    dispatch(toggleSidebar());
   };
 
   const menuBtnClasses = classNames('header__button', {
