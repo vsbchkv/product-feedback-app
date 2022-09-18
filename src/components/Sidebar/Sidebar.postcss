@@ -1,0 +1,26 @@
+@import '../../assets/styles/helpers/index.postcss';
+
+@layer components {
+  .sidebar {
+    --sidebar-width: 72.27vw;
+
+    display: grid;
+    grid-area: content;
+    align-content: start;
+    row-gap: rem(24);
+    width: var(--sidebar-width);
+    padding: rem(24);
+    background-color: var(--background-primary);
+    justify-self: end;
+    transform: translateX(var(--sidebar-width));
+    box-shadow: calc(0vw - (100vw - var(--sidebar-width))) 0 0 0 rgb(0 0 0 / 0%);
+  }
+
+  .sidebar--active {
+    box-shadow: calc(0vw - (100vw - var(--sidebar-width))) 0 0 0 rgb(0 0 0 / 50%);
+    transform: none;
+    transition:
+      transform .3s ease,
+      box-shadow .3s ease .3s;
+  }
+}

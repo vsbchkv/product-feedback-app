@@ -1,5 +1,4 @@
 @import '../../assets/styles/helpers/index.postcss';
-$tablet-screen: 768px;
 
 @layer components {
   .header {
@@ -23,66 +22,5 @@ $tablet-screen: 768px;
 
   .header__subtitle {
     font-size: rem(13);
-  }
-
-  .header__button {
-    position: relative;
-    display: grid;
-    grid-area: btn;
-    width: rem(20);
-    height: rem(18);
-    place-items: center;
-
-    & div::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      transform: scale(3);
-    }
-
-    @media (min-width: $tablet-screen) {
-      display: none;
-    }
-  }
-
-  .header__button::before,
-  .header__button::after,
-  .header__button div {
-    width: 100%;
-    height: rem(3);
-    background-color: var(--background-primary);
-  }
-
-  .header__button::before,
-  .header__button::after {
-    content: '';
-    transform-origin: center;
-  }
-}
-
-@layer variations {
-  .header__button--active {
-    display: grid;
-    grid-template-areas: 'btn';
-
-    & div {
-      grid-area: btn;
-      opacity: 0;
-    }
-  }
-
-  .header__button--active::before,
-  .header__button--active::after {
-    grid-area: btn;
-    align-self: center;
-    transition: transform .25s ease;
-  }
-
-  .header__button--active::before {
-    transform: rotate(45deg);
-  }
-
-  .header__button--active::after {
-    transform: rotate(-45deg);
   }
 }

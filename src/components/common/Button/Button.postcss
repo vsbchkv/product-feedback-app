@@ -1,0 +1,70 @@
+@import '../../../assets/styles/helpers/index.postcss';
+
+@layer components {
+
+  .button--burger {
+    position: relative;
+    display: grid;
+    grid-area: btn;
+    width: rem(20);
+    height: rem(18);
+    place-items: center;
+
+    & span {
+      z-index: 1;
+    }
+
+    & span::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      transform: scale(3);
+    }
+
+    @media (min-width: $tablet-screen) {
+      display: none;
+    }
+  }
+
+  .button--burger::before,
+  .button--burger::after,
+  .button--burger span {
+    width: 100%;
+    height: rem(3);
+    background-color: var(--background-primary);
+  }
+
+  .button--burger::before,
+  .button--burger::after {
+    content: '';
+    transform-origin: center;
+  }
+}
+
+@layer variations {
+  .button--burger[aria-expanded='true'] {
+    display: grid;
+    grid-template-areas: 'btn';
+
+    & span {
+      grid-area: btn;
+      opacity: 0;
+    }
+  }
+
+  .button--burger[aria-expanded='true']::before,
+  .button--burger[aria-expanded='true']::after {
+    grid-area: btn;
+    align-self: center;
+    transition: transform .25s ease;
+  }
+
+  .button--burger[aria-expanded='true']::before {
+    transform: rotate(45deg);
+  }
+
+  .button--burger[aria-expanded='true']::after {
+    transform: rotate(-45deg);
+  }
+}

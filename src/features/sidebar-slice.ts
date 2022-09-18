@@ -14,10 +14,13 @@ const sidebarSlice = createSlice({
   reducers: {
     toggleSidebar(state) {
       state.opened = !state.opened;
+    },
+    closeSidebar(state) {
+      state.opened = false;
     }
   }
 });
 
-export const { toggleSidebar } = sidebarSlice.actions;
+export const { toggleSidebar, closeSidebar } = sidebarSlice.actions;
 
 export default sidebarSlice.reducer;

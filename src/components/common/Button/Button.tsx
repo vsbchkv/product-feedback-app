@@ -1,10 +1,11 @@
 import React, { FC, MouseEventHandler, AriaAttributes, DOMAttributes } from 'react';
 import classNames from 'classnames';
 
+import './Button.postcss';
+
 interface IButtonProps {
   type?: 'button' | 'submit' | 'reset';
-  className?: string;
-  styleVariant?: 'primary' | 'secondary';
+  styleVariant?: 'burger' | 'primary' | 'secondary';
   disabled?: boolean;
   children?: JSX.Element[] | React.ReactNode;
   onClick?: MouseEventHandler<HTMLButtonElement>;
@@ -14,7 +15,6 @@ interface IButtonProps {
 const Button: FC<IButtonProps> = (
   {
     type = 'button',
-    className,
     styleVariant,
     disabled = false,
     children,
@@ -26,10 +26,10 @@ const Button: FC<IButtonProps> = (
   const classes = classNames(
     'button',
     {
+      'button--burger': styleVariant === 'burger',
       'button--primary': styleVariant === 'primary',
       'button--secondary': styleVariant === 'secondary',
     },
-    className,
   );
 
   return (
