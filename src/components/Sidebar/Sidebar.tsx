@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import classNames from 'classnames';
-import { closeSidebar } from '../../features/sidebar-slice';
+import { closeSidebar } from '../../features/sidebar/sidebar-slice';
 import Card from '../common/Card/Card';
 
 import './Sidebar.postcss';

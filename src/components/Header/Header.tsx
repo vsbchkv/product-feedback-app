@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { toggleSidebar } from '../../features/sidebar-slice';
+import { toggleSidebar } from '../../features/sidebar/sidebar-slice';
 
 import './Header.postcss';
 import Button from '../common/Button/Button';
