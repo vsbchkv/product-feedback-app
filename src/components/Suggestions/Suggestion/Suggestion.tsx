@@ -2,6 +2,7 @@ import React from 'react';
 import './Suggestion.postcss';
 
 import { Card } from '../../common/Card/Card';
+import { SvgIcon } from '../../common/SvgIcon/SvgIcon';
 
 interface ISuggestion {
   title: string;
@@ -27,7 +28,11 @@ export const Suggestion = (
       <h3 className='title suggestion__title'>{title}</h3>
       <p className='suggestion__desc'>{description}</p>
       <div className='tag suggestion__category'>{category}</div>
-      <div className='suggestion__upvotes'>{upvotes}</div>
+      <div className='suggestion__upvotes'>
+        {/* <img src='./icons/angle.svg' alt='' /> */}
+        <SvgIcon name='Angle' />
+        {upvotes}
+      </div>
       {commentsCount && <div className='suggestion__comments'>comm {commentsCount}</div>}
     </Card>
   );
