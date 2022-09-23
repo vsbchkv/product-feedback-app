@@ -1,0 +1,35 @@
+@import '../../../assets/styles/helpers/index.postcss';
+
+$gap: rem(8);
+
+@layer components {
+
+  .suggestion {
+    grid-template-columns: 1fr 1fr;
+    gap: $gap;
+  }
+
+  .suggestion__title,
+  .suggestion__category,
+  .suggestion__desc {
+    grid-column: span 2;
+  }
+
+  .suggestion__comments {
+    justify-self: end;
+  }
+
+  .suggestion__upvotes,
+  .suggestion__comments {
+    margin-top: $gap;
+    font-weight: 700;
+  }
+
+  .suggestion__category {
+    @extend %tag;
+
+    font-weight: 600;
+    color: var(--accent-color);
+    justify-self: start;
+  }
+}

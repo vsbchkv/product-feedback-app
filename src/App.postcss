@@ -1,11 +1,13 @@
+@import './assets/styles/helpers/index.postcss';
+
 @layer reset, base, theme, components, variations;
 
 @layer components {
   .app {
     display: grid;
     grid: 'header' minmax(rem(72), min-content) 'content' 1fr / 1fr;
-    min-height: 100vh;
-    font-weight: 555;
+    height: 100vh;
+    max-height: 100vh;
     color: var(--text-color);
     background-color: var(--background-primary);
     overflow: hidden;
@@ -13,5 +15,18 @@
     @media (min-width: 640px) {
       --tablet: none;
     }
+  }
+
+  .app__content {
+    @extend %custom-scroll;
+
+    grid-area: content;
+    overflow-y: auto;
+  }
+}
+
+@layer variations {
+  .app__content--noscroll {
+    overflow: hidden;
   }
 }

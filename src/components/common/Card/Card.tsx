@@ -5,12 +5,13 @@ import './Card.postcss';
 
 interface ICardProps {
   children: JSX.Element[] | React.ReactNode;
+  styleVariant?: 'suggestion';
 }
 
-const Card = ({ children }: ICardProps) => {
+export const Card = ({ children, styleVariant }: ICardProps) => {
 
   const cardClasses = classNames('card', {
-    // 'header__button--active': menuOpened,
+    'suggestion': styleVariant === 'suggestion',
   });
 
   return (
@@ -21,7 +22,3 @@ const Card = ({ children }: ICardProps) => {
     </article>
   );
 };
-
-export default Card;
-
-

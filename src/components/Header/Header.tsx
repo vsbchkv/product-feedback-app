@@ -6,7 +6,7 @@ import { toggleSidebar } from '../../features/sidebar/sidebar-slice';
 import './Header.postcss';
 import Button from '../common/Button/Button';
 
-const Header = () => {
+export const Header = () => {
 
   const menuOpened = useAppSelector((state) => state.sidebar.opened);
   const dispatch = useAppDispatch();
@@ -30,7 +30,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;
-
-

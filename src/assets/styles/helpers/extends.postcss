@@ -20,3 +20,42 @@
   border: 0;
   cursor: pointer;
 }
+
+%custom-scroll {
+  &::-webkit-scrollbar {
+    width: rem(6);
+    height: rem(6);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--background-primary);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--details-color);
+    border-radius: 5px;
+  }
+
+  @supports (scrollbar-width: thin) {
+    scrollbar-width: thin;
+    scrollbar-color: var(--details-color) var(--background-primary);   /* scroll thumb and track */
+  }
+}
+
+%visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+%tag {
+  padding: rem(6) rem(16);
+  background-color: var(--background-primary);
+  border-radius: $border-radius-default;
+  text-transform: capitalize;
+}

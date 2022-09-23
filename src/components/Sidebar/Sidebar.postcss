@@ -3,6 +3,7 @@
 @layer components {
   .sidebar {
     --sidebar-width: 72.27vw;
+    --shadow-color: rgb(0 0 0 / 0%);
 
     display: grid;
     grid-area: content;
@@ -13,11 +14,15 @@
     background-color: var(--background-primary);
     justify-self: end;
     transform: translateX(var(--sidebar-width));
-    box-shadow: calc(0vw - (100vw - var(--sidebar-width))) 0 0 0 rgb(0 0 0 / 0%);
+    box-shadow: calc(0vw - (100vw - var(--sidebar-width))) 0 0 0 var(--shadow-color);
   }
+}
 
+@layer variations {
   .sidebar--active {
-    box-shadow: calc(0vw - (100vw - var(--sidebar-width))) 0 0 0 rgb(0 0 0 / 50%);
+    --shadow-color: rgb(0 0 0 / 50%);
+
+    z-index: 9;
     transform: none;
     transition:
       transform .3s ease,

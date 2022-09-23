@@ -1,0 +1,34 @@
+@import '../../assets/styles/helpers/index.postcss';
+
+$gap: rem(8);
+
+@layer components {
+  .suggestions {
+    padding: rem(32) rem(24) rem(55);
+  }
+
+  .suggestions__list {
+    @extend %list-unstyled;
+
+    display: grid;
+    align-items: start;
+    row-gap: rem(16);
+  }
+
+  .suggestions__item,
+  .suggestion__title {
+    font-size: rem(13);
+  }
+}
+
+@layer variations {
+  .suggestions--onload {
+    display: grid;
+    height: 100%;
+    place-content: center;
+  }
+
+  .suggestion__card {
+    row-gap: $gap;
+  }
+}

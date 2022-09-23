@@ -12,6 +12,7 @@ module.exports = {
     },
     'postcss-advanced-variables': {
       variables: {
+        'border-radius-default': '10px',
         'tablet-screen': '768px',
         'desktop-screen': '1440px',
       }

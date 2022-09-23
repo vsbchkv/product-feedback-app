@@ -2,11 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import classNames from 'classnames';
 import { closeSidebar } from '../../features/sidebar/sidebar-slice';
-import Card from '../common/Card/Card';
+import { Card } from '../common/Card/Card';
 
 import './Sidebar.postcss';
 
-const Sidebar = () => {
+export const Sidebar = () => {
   const menuOpened = useAppSelector((state) => state.sidebar.opened);
   const sidebarRef = useRef<null | HTMLBaseElement>(null);
 
@@ -38,7 +38,3 @@ const Sidebar = () => {
     </aside>
   );
 };
-
-export default Sidebar;
-
-
