@@ -1,26 +1,24 @@
-
 module.exports = {
   plugins: {
-    'postcss-functions': {
+    "postcss-functions": {
       functions: {
         rem: function (pixVal) {
           const defaultRem = 16;
           const unit = pixVal / defaultRem;
-          return unit + 'rem';
-        }
-      }
+          return unit + "rem";
+        },
+      },
     },
-    'postcss-advanced-variables': {
+    "postcss-advanced-variables": {
       variables: {
-        'border-radius-default': '10px',
-        'tablet-screen': '768px',
-        'desktop-screen': '1440px',
-      }
-
+        "border-radius-default": "10px",
+        "tablet-screen": "768px",
+        "desktop-screen": "1440px",
+      },
     },
-    'autoprefixer': {},
-    'postcss-nesting': {},
-    'postcss-extend': {},
-    'postcss-custom-media': {},
+    autoprefixer: {},
+    "postcss-nesting": {},
+    "postcss-extend": {},
+    "postcss-custom-media": {},
   },
 };

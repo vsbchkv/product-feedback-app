@@ -32,13 +32,13 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: var(--details-color);
+    background-color: var(--extra-color);
     border-radius: 5px;
   }
 
   @supports (scrollbar-width: thin) {
     scrollbar-width: thin;
-    scrollbar-color: var(--details-color) var(--background-primary);   /* scroll thumb and track */
+    scrollbar-color: var(--extra-color) var(--background-primary);   /* scroll thumb and track */
   }
 }
 
@@ -54,7 +54,7 @@
 }
 
 %tag {
-  padding: rem(6) rem(16);
+  padding: rem(8) rem(16);
   background-color: var(--background-primary);
   border-radius: $border-radius-default;
   text-transform: capitalize;

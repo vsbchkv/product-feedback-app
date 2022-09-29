@@ -1,7 +1,5 @@
 @import '../../assets/styles/helpers/index.postcss';
 
-$gap: rem(8);
-
 @layer components {
   .suggestions {
     padding: rem(32) rem(24) rem(55);
@@ -22,13 +20,17 @@ $gap: rem(8);
 }
 
 @layer variations {
-  .suggestions--onload {
+  .suggestions--onload,
+  .suggestions--empty {
     display: grid;
     height: 100%;
+  }
+
+  .suggestions--onload {
     place-content: center;
   }
 
-  .suggestion__card {
-    row-gap: $gap;
+  .suggestions--empty {
+    padding-bottom: rem(47);
   }
 }

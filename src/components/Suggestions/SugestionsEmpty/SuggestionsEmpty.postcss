@@ -1,0 +1,40 @@
+@layer components {
+
+  .suggestions-empty {
+    display: grid;
+    align-content: center;
+    height: 100%;
+    justify-items: center;
+
+    & .svg-icon {
+      width: rem(102);
+      height: rem(108);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      @layer theme.dark {
+        & .card > .svg-icon {
+          mix-blend-mode: exclusion; /* FIXME: svg fill */
+        }
+      }
+    }
+  }
+
+  .suggestions-empty__title,
+  .suggestions-empty__desc {
+    text-align: center;
+  }
+
+  .suggestions-empty__title {
+    margin-top: rem(40);
+  }
+
+  .suggestions-empty__desc {
+    margin-top: rem(14);
+    color: var(--text-color-active);
+  }
+
+  .suggestions-empty__desc + .button {
+    margin-top: rem(24);
+  }
+}

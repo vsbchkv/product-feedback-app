@@ -4,26 +4,38 @@
 
   @layer light {
     :root {
+      --default-color: #3a4374;
+      --default-color-active: #656ea3;
       --accent-color: #4661e6;
+      --accent-color-active: #7c91f9;
+      --extra-color: #ad1fea;
+      --extra-color-active: #c75af6;
+      --danger-color: #d73737;
+      --danger-color-active: #e98888;
       --background-primary: #f2f2f2;
       --background-secondary: #fff;
-      --text-color: #3a4374;
-      --text-color-light: #647196;
+      --background-tertiary: var(--default-color);
+      --text-color: var(--default-color);
+      --text-color-active: #647196;
       --text-color-2: #fff;
-      --details-color: #ad1fea;
     }
   }
 
   @media (prefers-color-scheme: dark) {
     @layer theme.dark {
       :root {
-        --accent-color: #4661e6;
+        --accent-color: #506dff;
+        --accent-color-active: #3153fc;
+        --extra-color: #a400eb;
+        --extra-color-active: #8902c4;
+        --danger-color: #d73737;
+        --danger-color-active: #d60000;
         --background-primary: #232323;
-        --background-secondary: #000;
+        --background-secondary: #181818;
+        --background-tertiary: var(--default-color);
         --text-color: #c8d6ff;
-        --text-color-light: #7c849c;
-        --text-color-2: #000;
-        --details-color: #ad1fea;
+        --text-color-active: #969696;
+        --text-color-2: #fff;
       }
     }
   }

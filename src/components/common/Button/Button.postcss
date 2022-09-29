@@ -2,6 +2,27 @@
 
 @layer components {
 
+  .button {
+    display: inline-flex;
+    column-gap: rem(4);
+    align-items: center;
+
+    &:hover,
+    &:not(:hover) {
+      transition: background-color .15s ease-in-out;
+    }
+  }
+}
+
+@layer variations {
+  .button {
+    & .svg-icon {
+      width: var(--svg-icon-width, .7em);
+      height: var(--svg-icon-height, .7em);
+      fill: var(--text-color-2, currentcolor);
+    }
+  }
+
   .button--burger {
     position: relative;
     display: grid;
@@ -25,46 +46,86 @@
     @media (min-width: $tablet-screen) {
       display: none;
     }
-  }
 
-  .button--burger::before,
-  .button--burger::after,
-  .button--burger span {
-    width: 100%;
-    height: rem(3);
-    background-color: var(--background-primary);
-  }
-
-  .button--burger::before,
-  .button--burger::after {
-    content: '';
-    transform-origin: center;
-  }
-}
-
-@layer variations {
-  .button--burger[aria-expanded='true'] {
-    display: grid;
-    grid-template-areas: 'btn';
-
+    &::before,
+    &::after,
     & span {
+      width: 100%;
+      height: rem(3);
+      background-color: var(--background-primary);
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      transform-origin: center;
+    }
+
+    &[aria-expanded='true'] {
+      display: grid;
+      grid-template-areas: 'btn';
+
+      & span {
+        grid-area: btn;
+        opacity: 0;
+      }
+    }
+
+    &[aria-expanded='true']::before,
+    &[aria-expanded='true']::after {
       grid-area: btn;
-      opacity: 0;
+      align-self: center;
+      transition: transform .25s ease;
+    }
+
+    &[aria-expanded='true']::before {
+      transform: rotate(45deg);
+    }
+
+    &[aria-expanded='true']::after {
+      transform: rotate(-45deg);
     }
   }
 
-  .button--burger[aria-expanded='true']::before,
-  .button--burger[aria-expanded='true']::after {
-    grid-area: btn;
-    align-self: center;
-    transition: transform .25s ease;
+  .button--primary,
+  .button--accent,
+  .button--extra,
+  .button--danger {
+    padding: rem(12) rem(24);
+    font-weight: 700;
+    color: var(--text-color-2);
+    border-radius: $border-radius-default;
   }
 
-  .button--burger[aria-expanded='true']::before {
-    transform: rotate(45deg);
+  .button--primary {
+    background-color: var(--default-color);
+
+    &:hover {
+      background-color: var(--default-color-active);
+    }
   }
 
-  .button--burger[aria-expanded='true']::after {
-    transform: rotate(-45deg);
+  .button--accent {
+    background-color: var(--accent-color);
+
+    &:hover {
+      background-color: var(--accent-color-active);
+    }
+  }
+
+  .button--extra {
+    background-color: var(--extra-color);
+
+    &:hover {
+      background-color: var(--extra-color-active);
+    }
+  }
+
+  .button--danger {
+    background-color: var(--danger-color);
+
+    &:hover {
+      background-color: var(--danger-color-active);
+    }
   }
 }

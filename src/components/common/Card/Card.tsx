@@ -1,24 +1,17 @@
-import React from 'react';
-import classNames from 'classnames';
+import React from "react";
+import classNames from "classnames";
 
-import './Card.postcss';
+import "./Card.postcss";
 
 interface ICardProps {
   children: JSX.Element[] | React.ReactNode;
-  styleVariant?: 'suggestion';
+  styleVariant?: "suggestion";
 }
 
 export const Card = ({ children, styleVariant }: ICardProps) => {
-
-  const cardClasses = classNames('card', {
-    'suggestion': styleVariant === 'suggestion',
+  const cardClasses = classNames("card", {
+    suggestion: styleVariant === "suggestion",
   });
 
-  return (
-    <article
-      className={cardClasses}
-    >
-      {children}
-    </article>
-  );
+  return <article className={cardClasses}>{children}</article>;
 };

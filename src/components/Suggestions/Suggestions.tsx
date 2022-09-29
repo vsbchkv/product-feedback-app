@@ -1,66 +1,59 @@
-import React, { memo } from 'react';
-import './Suggestions.postcss';
+import React, { memo } from "react";
+import "./Suggestions.postcss";
 
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { useGetDataListQuery } from '../../features/data-api/data-api-slice';
+import { useGetDataListQuery } from "../../features/data-api/data-api-slice";
 
-import classNames from 'classnames';
-import { Suggestion } from './Suggestion/Suggestion';
+import { ISuggestionItem } from "../../types.ts";
 
-interface ISuggestionItem {
-  id: number;
-  title: string;
-  category: string;
-  comments: [];
-  description: string;
-  status: string;
-  upvotes: number;
-}
+import classNames from "classnames";
+import { Suggestion } from "./Suggestion/Suggestion";
+import { SuggestionsEmpty } from "./SugestionsEmpty/SuggestionsEmpty";
+
+const getSuggestions = (data: ISuggestionItem[]) => {
+  if (data.length) {
+    const suggestionsList = data.map(
+      ({
+        id,
+        title,
+        category,
+        comments = [],
+        description,
+        status,
+        upvotes,
+      }: ISuggestionItem) => {
+        return (
+          <li key={id} className="suggestions__item">
+            <Suggestion
+              title={title}
+              description={description}
+              category={category}
+              status={status}
+              upvotes={upvotes}
+              commentsCount={comments.length}
+            />
+          </li>
+        );
+      }
+    );
+    return <ul className="suggestions__list">{suggestionsList}</ul>;
+  } else {
+    return <SuggestionsEmpty />;
+  }
+};
 
 export const Suggestions = memo(function Suggestions() {
-  const { data = [], isLoading } = useGetDataListQuery('productRequests');
-  console.log(data);
+  const { data = [], isLoading } = useGetDataListQuery("");
 
-  const suggestionsClasses = classNames('suggestions', {
-    'suggestions--onload': isLoading,
-  });
+  const isSuggestionsEmpty: boolean = !data.length && !isLoading;
 
-  const list = data.map((
-    {
-      id,
-      title,
-      category,
-      comments = [],
-      description,
-      status,
-      upvotes
-    }: ISuggestionItem) => {
-    return (
-      <li
-        key={id}
-        className='suggestions__item'>
-        <Suggestion
-          title={title}
-          description={description}
-          category={category}
-          status={status}
-          upvotes={upvotes}
-          commentsCount={comments.length}
-        />
-      </li>
-    );
+  const suggestionsClasses = classNames("suggestions", {
+    "suggestions--onload": isLoading,
+    "suggestions--empty": isSuggestionsEmpty,
   });
 
   return (
-    <section className={suggestionsClasses}>
-      {
-        data.length ?
-          <ul className='suggestions__list'>
-            {list}
-          </ul>
-          : <h2>...Loading</h2>
-      }
-    </section>
+    <main className={suggestionsClasses}>
+      {isLoading ? <h2>...Loading</h2> : getSuggestions(data)}
+    </main>
   );
 });
-

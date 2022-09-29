@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { AriaAttributes, FC, SVGProps } from "react";
 
-import { ReactComponent as Angle } from '../../../assets/icons/Angle.svg';
+import "./SvgIcon.postcss";
+
+import { ReactComponent as Angle } from "../../../assets/icons/Angle.svg";
+import { ReactComponent as Comment } from "../../../assets/icons/Comment.svg";
+import { ReactComponent as EmptyPage } from "../../../assets/icons/EmptyPage.svg";
+import { ReactComponent as Plus } from "../../../assets/icons/Plus.svg";
 
 const icons = {
-  Angle: <Angle />
+  Angle: Angle,
+  Comment: Comment,
+  EmptyPage: EmptyPage,
+  Plus: Plus,
 };
 
 interface ISvgIcon {
   name: keyof typeof icons;
+  attrs?: SVGProps<SVGSVGElement> | AriaAttributes; // TODO: check it
 }
 
-export const SvgIcon = ({name}: ISvgIcon) => {
-  return (
-    icons[name]
-  );
+export const SvgIcon: FC<ISvgIcon> = ({ name, ...attrs }: ISvgIcon) => {
+  const Icon = icons[name];
+
+  return <Icon className="svg-icon" aria-hidden="true" {...attrs} />;
 };

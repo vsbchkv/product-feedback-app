@@ -15,12 +15,15 @@ $gap: rem(8);
     grid-column: span 2;
   }
 
-  .suggestion__comments {
-    justify-self: end;
+  .suggestion__desc {
+    color: var(--text-color-active);
   }
 
   .suggestion__upvotes,
   .suggestion__comments {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
     margin-top: $gap;
     font-weight: 700;
   }
@@ -31,5 +34,33 @@ $gap: rem(8);
     font-weight: 600;
     color: var(--accent-color);
     justify-self: start;
+  }
+
+  .suggestion__upvotes {
+    @extend %tag;
+
+    justify-content: center;
+    min-width: rem(69);
+    justify-self: start;
+
+    @media (min-width: $tablet-screen) {
+      flex-direction: column;
+      min-width: auto;
+    }
+
+    & .svg-icon {
+      width: rem(10);
+      fill: var(--accent-color);
+    }
+  }
+
+  .suggestion__comments {
+    justify-self: end;
+
+    & .svg-icon {
+      width: rem(18);
+      height: rem(18);
+      fill: #cdd2ee;  /* TODO: var */
+    }
   }
 }

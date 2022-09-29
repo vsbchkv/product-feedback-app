@@ -1,9 +1,9 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const DATA_URL = 'https://api.npoint.io/9ecd93b4e1fc9002609f';
+const DATA_URL = "https://api.npoint.io/9ecd93b4e1fc9002609f";
 const ENDPOINTS = {
-  dataList: 'productRequests',
-  currentUser: 'currentUser',
+  dataList: "productRequests",
+  currentUser: "currentUser",
 };
 
 interface User {
@@ -14,7 +14,7 @@ interface User {
 }
 
 export const dataApi = createApi({
-  reducerPath: 'dataApi',
+  reducerPath: "dataApi",
   baseQuery: fetchBaseQuery({ baseUrl: DATA_URL }),
   endpoints: (builder) => ({
     getDataList: builder.query<[], string>({
