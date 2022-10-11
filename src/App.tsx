@@ -4,6 +4,7 @@ import "./App.postcss";
 import { useAppSelector } from "./app/hooks";
 import classNames from "classnames";
 
+import { Filter } from "./components/Filter/Filter";
 import { Header } from "./components/Header/Header";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { Suggestions } from "./components/Suggestions/Suggestions";
@@ -17,8 +18,10 @@ export default function App() {
 
   return (
     <div className="app">
+      {/* TODO: router */}
       <Header />
       <Sidebar />
+      <Filter />
       <div className={appContentClasses}>
         <Suggestions />
       </div>

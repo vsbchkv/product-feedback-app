@@ -1,0 +1,29 @@
+@import '../../assets/styles/helpers/index.postcss';
+
+@layer components {
+
+  .filter,
+  .filter__counter {
+    display: flex;
+    align-items: center;
+  }
+
+  .filter {
+    grid-area: filter;
+    padding: rem(8) rem(24);
+    background-color: var(--background-tertiary);
+    color: var(--text-color-2);
+  }
+
+  .filter__counter {
+    column-gap: rem(16);
+    font-weight: 700;
+
+    & > .svg-icon {
+      width: rem(24);
+      height: rem(24);
+      margin-right: rem(16);
+      fill: var(--text-color-2);
+    }
+  }
+}

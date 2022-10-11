@@ -6,12 +6,14 @@ import { ReactComponent as Angle } from "../../../assets/icons/Angle.svg";
 import { ReactComponent as Comment } from "../../../assets/icons/Comment.svg";
 import { ReactComponent as EmptyPage } from "../../../assets/icons/EmptyPage.svg";
 import { ReactComponent as Plus } from "../../../assets/icons/Plus.svg";
+import { ReactComponent as Lightbulb } from "../../../assets/icons/Lightbulb.svg";
 
 const icons = {
   Angle: Angle,
   Comment: Comment,
   EmptyPage: EmptyPage,
   Plus: Plus,
+  Lightbulb: Lightbulb,
 };
 
 interface ISvgIcon {
