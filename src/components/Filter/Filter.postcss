@@ -4,26 +4,49 @@
 
   .filter,
   .filter__counter {
-    display: flex;
     align-items: center;
   }
 
   .filter {
+    display: flex;
     grid-area: filter;
+    column-gap: rem(38);
     padding: rem(8) rem(24);
-    background-color: var(--background-tertiary);
     color: var(--text-color-2);
+    background-color: var(--background-tertiary);
+
+    & > .button {
+      margin-left: auto;
+      text-transform: capitalize;
+    }
   }
 
   .filter__counter {
-    column-gap: rem(16);
+    display: none;
     font-weight: 700;
+
+    @media (min-width: $tablet-screen) {
+      display: flex;
+    }
 
     & > .svg-icon {
       width: rem(24);
       height: rem(24);
       margin-right: rem(16);
       fill: var(--text-color-2);
+    }
+
+    & > span {
+      display: flex;
+      margin-right: .5ch;
+    }
+  }
+
+  .filter__sorting {
+    display: flex;
+
+    & > .select {
+      min-width: rem(180);
     }
   }
 }

@@ -10,7 +10,13 @@ import "./Button.postcss";
 
 interface IButtonProps {
   type?: "button" | "submit" | "reset";
-  styleVariant?: "burger" | "primary" | "accent" | "extra" | "danger";
+  styleVariant?:
+    | "burger"
+    | "primary"
+    | "accent"
+    | "extra"
+    | "danger"
+    | "select-head";
   disabled?: boolean;
   children?: JSX.Element[] | React.ReactNode;
   onClick?: MouseEventHandler<HTMLButtonElement>;
@@ -31,6 +37,7 @@ export const Button: FC<IButtonProps> = ({
     "button--accent": styleVariant === "accent",
     "button--extra": styleVariant === "extra",
     "button--danger": styleVariant === "danger",
+    "button--select-head": styleVariant === "select-head",
   });
 
   return (

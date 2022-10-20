@@ -11,18 +11,16 @@
     &:not(:hover) {
       transition: background-color .15s ease-in-out;
     }
-  }
-}
 
-@layer variations {
-  .button {
     & .svg-icon {
       width: var(--svg-icon-width, .7em);
       height: var(--svg-icon-height, .7em);
       fill: var(--text-color-2, currentcolor);
     }
   }
+}
 
+@layer variations {
   .button--burger {
     position: relative;
     display: grid;
@@ -127,5 +125,11 @@
     &:hover {
       background-color: var(--danger-color-active);
     }
+  }
+
+  .button--select-head {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 }
