@@ -1,0 +1,88 @@
+@import '../../../assets/styles/helpers/index.postcss';
+
+@layer components {
+
+  .select {
+    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: .5ch;
+    height: rem(20);
+
+    & > .button {
+      font-weight: 700;
+    }
+
+    & > .button .svg-icon {
+      width: rem(12);
+      height: rem(8);
+      fill: var(--background-secondary);
+      rotate: 180deg;
+      transition: rotate .15s;
+    }
+  }
+
+  .select__title {
+    font-weight: 400;
+  }
+
+  .select__selected,
+  .select__option {
+    text-transform: capitalize;
+  }
+
+  .select__optionlist {
+    @extend %list-unstyled;
+
+    position: absolute;
+    top: calc(100% + rem(44));
+    display: none;
+    width: rem(255);
+    color: var(--text-color-active);
+    background-color: var(--background-secondary);
+    border-radius: $border-radius-default;
+    box-shadow: 0 10px 40px -7px rgb(55 63 104 / 35%);
+  }
+
+  .select__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: rem(12);
+    padding: rem(12) rem(24);
+    font-size: rem(18);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--extra-color);
+    }
+
+    & > .svg-icon {
+      display: none;
+      width: rem(12);
+      max-width: rem(12);
+      height: rem(10);
+      fill: var(--extra-color);
+    }
+  }
+}
+
+@layer variations {
+  .select--opened {
+
+    & > .button .svg-icon {
+      rotate: 0deg;
+    }
+
+    & .select__optionlist {
+      display: block;
+    }
+  }
+
+  .select__option[aria-selected='true'] {
+
+    & > .svg-icon {
+      display: block;
+    }
+  }
+}

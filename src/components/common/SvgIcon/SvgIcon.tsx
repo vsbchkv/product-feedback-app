@@ -7,6 +7,7 @@ import { ReactComponent as Comment } from "../../../assets/icons/Comment.svg";
 import { ReactComponent as EmptyPage } from "../../../assets/icons/EmptyPage.svg";
 import { ReactComponent as Plus } from "../../../assets/icons/Plus.svg";
 import { ReactComponent as Lightbulb } from "../../../assets/icons/Lightbulb.svg";
+import { ReactComponent as Checkmark } from "../../../assets/icons/Checkmark.svg";
 
 const icons = {
   Angle: Angle,
@@ -14,6 +15,7 @@ const icons = {
   EmptyPage: EmptyPage,
   Plus: Plus,
   Lightbulb: Lightbulb,
+  Checkmark: Checkmark,
 };
 
 interface ISvgIcon {
